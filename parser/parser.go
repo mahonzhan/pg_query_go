@@ -27,7 +27,6 @@ uint64_t pg_query_hash_xxh3_64(void *data, size_t len, size_t seed) {
 	return XXH3_64bits_withSeed(data, len, seed);
 }
 */
-
 import "C"
 
 import (
