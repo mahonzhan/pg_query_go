@@ -22,6 +22,14 @@ PgQueryDeparseResult pg_query_deparse_protobuf_direct_args(void* data, unsigned 
 	return pg_query_deparse_protobuf(p);
 }
 
+// Avoid complexities dealing with C structs in Go
+PgQueryDeparseResult pg_query_deparse_node_protobuf_direct_args(int deparse_type, void* data, unsigned int len) {
+	PgQueryProtobuf p;
+	p.data = (char *) data;
+	p.len = len;
+	return pg_query_deparse_node_protobuf(deparse_type, p);
+}
+
 // Avoid inconsistent type behaviour in xxhash library
 uint64_t pg_query_hash_xxh3_64(void *data, size_t len, size_t seed) {
 	return XXH3_64bits_withSeed(data, len, seed);
