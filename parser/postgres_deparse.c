@@ -15,6 +15,7 @@
 #include "utils/datetime.h"
 #include "utils/timestamp.h"
 #include "utils/xml.h"
+#include "pg_query.h"
 
 typedef enum DeparseNodeContext {
 	DEPARSE_NODE_CONTEXT_NONE,
