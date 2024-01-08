@@ -1,3 +1,7 @@
+#include "pg_query.h"
+#include "pg_query_internal.h"
+#include "pg_query_readfuncs.h"
+	
 #include "postgres.h"
 #include "catalog/index.h"
 #include "catalog/pg_am.h"
@@ -15,7 +19,6 @@
 #include "utils/datetime.h"
 #include "utils/timestamp.h"
 #include "utils/xml.h"
-#include "pg_query.h"
 
 typedef enum DeparseNodeContext {
 	DEPARSE_NODE_CONTEXT_NONE,
